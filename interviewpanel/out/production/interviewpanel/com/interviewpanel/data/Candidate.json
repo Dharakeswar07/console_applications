@@ -1,0 +1,46 @@
+[
+  {
+    "candidateId": 1,
+    "name": "Balaji",
+    "location": "Covai",
+    "skill": "Java,DSA",
+    "appliedPosition": "Software Engineer",
+    "phoneNo": "6745553544",
+    "emailId": "balaji@gmail.com",
+    "education": "MCA",
+    "createdBy": 1
+  },
+  {
+    "candidateId": 2,
+    "name": "Sathesh",
+    "location": "Thiruchi",
+    "skill": "Java,DSA",
+    "appliedPosition": "Software Engineer",
+    "phoneNo": "5676545676",
+    "emailId": "sathesh@gmail.com",
+    "education": "MCA",
+    "createdBy": 3
+  },
+  {
+    "candidateId": 3,
+    "name": "Ganesh",
+    "location": "Tenkasi",
+    "skill": "PHP,JavaScript",
+    "appliedPosition": "Software Developer",
+    "phoneNo": "45676543456",
+    "emailId": "ganesh@gmail.com",
+    "education": "MCA",
+    "createdBy": 3
+  },
+  {
+    "candidateId": 4,
+    "name": "Praveen",
+    "location": "Chennai",
+    "skill": "Javascript,HTML,CSS",
+    "appliedPosition": "Software Developer",
+    "phoneNo": "456765434",
+    "emailId": "praveen@gmail.com",
+    "education": "MCA",
+    "createdBy": 2
+  }
+]

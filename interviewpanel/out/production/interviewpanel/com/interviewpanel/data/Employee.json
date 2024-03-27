@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Goku",
+    "phoneNo": "4567654345",
+    "emailId": "goku@gmail.com",
+    "location": "Chennai",
+    "position": "Interviewer"
+  },
+  {
+    "id": 2,
+    "name": "Picclo",
+    "phoneNo": "567654345",
+    "emailId": "picclo@gmail.com",
+    "location": "Saitama City",
+    "position": "Receptionist"
+  },
+  {
+    "id": 3,
+    "name": "Vegeta",
+    "phoneNo": "45678765",
+    "emailId": "vegeta@gmail.com",
+    "location": "Saiyan Planet",
+    "position": "Interviewer"
+  }
+]

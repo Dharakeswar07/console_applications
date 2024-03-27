@@ -1,0 +1,23 @@
+[
+  {
+    "id": 2,
+    "employeeId": 1,
+    "candidateId": 2,
+    "status": "On Progress",
+    "result": "Pending"
+  },
+  {
+    "id": 3,
+    "employeeId": 1,
+    "candidateId": 3,
+    "status": "Waiting",
+    "result": "Pending"
+  },
+  {
+    "id": 5,
+    "employeeId": 3,
+    "candidateId": 4,
+    "status": "On Progress",
+    "result": "Pending"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "id": 4,
+    "employeeId": 1,
+    "candidateId": 1,
+    "status": "Success"
+  },
+  {
+    "id": 4,
+    "employeeId": 1,
+    "candidateId": 2,
+    "status": "Success"
+  },
+  {
+    "id": 4,
+    "employeeId": 1,
+    "candidateId": 1,
+    "status": "Success",
+    "result": "Not Selected"
+  },
+  {
+    "id": 6,
+    "employeeId": 3,
+    "candidateId": 1,
+    "status": "Success",
+    "result": "Not Selected"
+  }
+]
