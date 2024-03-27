@@ -70,24 +70,32 @@ This Library Management System is a B2C (Business-to-Consumer) application devel
 ## Screenshots
 ### Admin Login
 
-![MainMenu]
+![AdminLogin (2)](https://github.com/Dharakeswar07/console_applications/assets/161347017/9e3ec5ed-4296-4093-b7c1-d9a171b58dee)
+
 ### Main Menu
+![MainMenu](https://github.com/Dharakeswar07/console_applications/assets/161347017/4d63451e-e336-4da3-9358-bf0c177948d1)
 
-![MainMenu](E:\Java\FirstProject\LibraryManagement\src\com\librarymanagement\ScreenShot\MainMenu.png)
 ### Librarian Login
+![LibrarianLogin](https://github.com/Dharakeswar07/console_applications/assets/161347017/39818b9f-8a53-4141-b0c0-f8bf45ef66fc)
 
-![LibrarianLogin](E:\Java\FirstProject\LibraryManagement\src\com\librarymanagement\ScreenShot\LibrarianLogin.png)
 ### Library Creation
+![LibrarianCreation](https://github.com/Dharakeswar07/console_applications/assets/161347017/2aa52a79-7709-45b1-91bf-6bf51cbf0a1a)
 
-![LibrarianCreation](E:\Java\FirstProject\LibraryManagement\src\com\librarymanagement\ScreenShot\LibrarianCreation.png)
 ### Book Management
 
-![BookCreation](E:\Java\FirstProject\LibraryManagement\src\com\librarymanagement\ScreenShot\BookCreation.png)
+![BookCreation](https://github.com/Dharakeswar07/console_applications/assets/161347017/fe34d70c-6dfd-441a-9ca4-a6a2c2cbcf01)
 ### Customer Creation:
 
-![CustomerManage](E:\Java\FirstProject\LibraryManagement\src\com\librarymanagement\ScreenShot\CustomerManage.png)
+![CustomerManage](https://github.com/Dharakeswar07/console_applications/assets/161347017/09f127c0-c9b4-4147-bd70-0e65671a59b6)
+
 ### Issue Book Manage
 
-![IssueBookManage](E:\Java\FirstProject\LibraryManagement\src\com\librarymanagement\ScreenShot\IssueBookManage.png)
+![IssueBookManage](https://github.com/Dharakeswar07/console_applications/assets/161347017/cb895f75-fdf5-44f4-b478-e1ed0cbedf0e)
+
+
+
+
+
+
 
 
