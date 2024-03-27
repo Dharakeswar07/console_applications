@@ -1,0 +1,24 @@
+[
+  {
+    "name": "One Piece ",
+    "id": 1,
+    "author": "Oda",
+    "publication": "Goku",
+    "edition": "3",
+    "journal": "Vegeta",
+    "availableCount": 240,
+    "volume": 3,
+    "libraryId": 2
+  },
+  {
+    "name": "Attack on Titan\u0027s",
+    "id": 2,
+    "author": "Idon\u0027tKnow",
+    "publication": "Picclo",
+    "edition": "3",
+    "journal": "Gohan",
+    "availableCount": 30,
+    "volume": 2,
+    "libraryId": 2
+  }
+]

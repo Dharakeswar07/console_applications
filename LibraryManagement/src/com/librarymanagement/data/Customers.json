@@ -1,0 +1,26 @@
+[
+  {
+    "customerId": 1,
+    "customerName": "Goku",
+    "phoneNo": "45676543456",
+    "emailId": "goku@gmail.com",
+    "location": "Chennai",
+    "issueBookCount": 1
+  },
+  {
+    "customerId": 2,
+    "customerName": "Vegeta",
+    "phoneNo": "567876543",
+    "emailId": "vegeta@gmaill.com",
+    "location": "Madurai",
+    "issueBookCount": 1
+  },
+  {
+    "customerId": 3,
+    "customerName": "Picclo",
+    "phoneNo": "56545654",
+    "emailId": "picclo@gmail.com",
+    "location": "Saitama City",
+    "issueBookCount": 0
+  }
+]
