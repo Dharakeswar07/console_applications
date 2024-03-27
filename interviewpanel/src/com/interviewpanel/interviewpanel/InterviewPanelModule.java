@@ -12,9 +12,9 @@ import com.interviewpanel.models.Employee;
 import com.interviewpanel.models.InterviewPanel;
 import com.interviewpanel.models.SessionStore;
 
-public class InterviewPanelModule
+public class InterviewPanelModule{
     private InterviewPanelView interviewPanelView;
-    private Map<Integer, String> statusMap = new HashMap<>();
+
     private SessionStore sessionStore;
 
     public InterviewPanelModule(InterviewPanelView interviewPanelView) {
@@ -70,7 +70,7 @@ public class InterviewPanelModule
     }
 
     public void addInterview(int empId, int candidateId) {
-
+        Map<Integer, String> statusMap=InterviewPanelDatabase.getInstance().getHashList();
         String status = getStatus(empId, statusMap);
         if (status.equals("On Progress")) {
             statusMap.put(empId, "Waiting");
@@ -79,9 +79,9 @@ public class InterviewPanelModule
         InterviewPanelDatabase database = InterviewPanelDatabase.getInstance();
         int lastInterviewPanelId = database.getInterviewPanelList().stream().mapToInt(InterviewPanel::getId).max().orElse(0);
         int  interviewPanelUserID= lastInterviewPanelId + 1;
-        InterviewPanel interviewPanel = new InterviewPanel(interviewPanelUserID,empId, candidateId, status);
+        InterviewPanel interviewPanel = new InterviewPanel(interviewPanelUserID,empId, candidateId, status,"Pending");
         InterviewPanelDatabase.getInstance().addInterviewPanelList(interviewPanel);
-
+InterviewPanelDatabase.getInstance().interviewPanelQueueExport();
         interviewPanelView.showMessage("Interview scheduled successfully!");
         interviewPanelView.interviewPanelInit();
     }
@@ -102,8 +102,24 @@ public class InterviewPanelModule
 
     }
 
-    public void checkInterviewProcess(int candidateId) {
-        InterviewPanel interviewPanel = InterviewPanelDatabase.getInstance().getCandidateInterviewById(candidateId);
+    public void checkInterviewProcess(int candidateId,int choice) {
+        String result="";
+        if(choice==1)
+        {
+            result="Selected";
+        }
+        else if(choice==2)
+        {
+            result="Not Selected";
+        }
+
+        InterviewPanel interviewPanel=null;
+        Queue<InterviewPanel> interviewPanelQueue1 = InterviewPanelDatabase.getInstance().getInterviewPanelList();
+        for (InterviewPanel panel : interviewPanelQueue1) {
+            if (panel.getCandidateId() == candidateId) {
+                interviewPanel=panel;
+            }
+        }
         if (interviewPanel != null) {
             if (interviewPanel.getEmployeeId() == sessionStore.getUserId()) {
                 if (interviewPanel.getStatus().equals("On Progress")) {
@@ -113,6 +129,7 @@ public class InterviewPanelModule
                         for (InterviewPanel panel : interviewPanelQueue) {
                             if (panel.getEmployeeId() == interviewPanel.getEmployeeId() && panel.getStatus().equals("Waiting")) {
                                 panel.setStatus("On Progress");
+                                InterviewPanelDatabase.getInstance().interviewPanelQueueExport();
                                 break;
                             }
                         }
@@ -121,8 +138,9 @@ public class InterviewPanelModule
                         int lastInterviewPanelId = database.getInterviewPanelList().stream().mapToInt(InterviewPanel::getId).max().orElse(0);
                         int  interviewPanelUserID= lastInterviewPanelId + 1;
                         InterviewPanel successPanel = new InterviewPanel(interviewPanelUserID,interviewPanel.getEmployeeId(),
-                                interviewPanel.getCandidateId(), "Success");
+                                interviewPanel.getCandidateId(), "Success",result);
                         InterviewPanelDatabase.getInstance().addResultOfInterview(successPanel);
+                        database.interviewPanelListExport();
                         interviewPanelView.showMessage("Interview process completed successfully for candidate ID " + candidateId);
                     } else {
                         interviewPanelView.showMessage("Failed to remove interview panel for candidate ID " + candidateId);

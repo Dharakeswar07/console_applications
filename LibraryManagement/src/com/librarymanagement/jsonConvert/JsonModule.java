@@ -35,7 +35,7 @@ public class JsonModule {
             return;
         }
 
-        String fileName = "src/com/classexample/data" + File.separator + dir + ".json";
+        String fileName = "src/com/librarymanagement/data" + File.separator + dir + ".json";
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(list, writer);
         } catch (IOException e) {

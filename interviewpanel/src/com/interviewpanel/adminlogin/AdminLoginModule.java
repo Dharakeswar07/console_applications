@@ -29,7 +29,7 @@ public class AdminLoginModule {
 
                     if (credit.getUserName().equals(userName) && credit.getPassword().equals(password) )
                     {
-                        loginUserId=credit.getId();
+                        loginUserId=credit.getEmpId();
                         role=credit.getType();
                     }
                 }
@@ -37,9 +37,11 @@ public class AdminLoginModule {
                 adminLoginView.onSuccess();
             } else {
                 adminLoginView.showAlert("Invalid Password");
+                adminLoginView.loginCheckText();
             }
         } else {
             adminLoginView.showAlert("Invalid Username");
+            adminLoginView.loginCheckText();
         }
     }
     public void sessionStoreGet(int loginUserId, String userName, String password, String role) {
@@ -69,14 +71,15 @@ public class AdminLoginModule {
     }
 
     public void addCreditantials() {
-        Creditantials creditantials = new Creditantials(0,"zsgs", "admin", "Admin");
+        Creditantials creditantials = new Creditantials(0,"zsgs", "admin", "Admin",0);
         InterviewPanelDatabase.getInstance().addCreditantials(creditantials);
+        InterviewPanelDatabase.getInstance().loadDataFromJsonFiles();
     }
 
     public void redirectPoint() {
         creditantialsList = InterviewPanelDatabase.getInstance().getCreditantialsList();
         // new ManageCustomerView().customerInit();
-        if (creditantialsList.size() > 1) {
+        if (!creditantialsList.isEmpty()) {
             new HomeView().homeInit();
         } else {
             AdminProfileView adminProfileView = new AdminProfileView();

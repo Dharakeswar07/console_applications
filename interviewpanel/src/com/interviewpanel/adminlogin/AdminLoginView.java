@@ -24,7 +24,7 @@ Scanner sc=new Scanner(System.in);
        loginCheckText();
     }
 
-    private void loginCheckText() {
+    public void loginCheckText() {
         System.out.println("\n\t\t\t\t   Login.");
         System.out.println("User Name:");
         String userName=sc.next();

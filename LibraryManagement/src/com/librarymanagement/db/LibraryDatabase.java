@@ -277,12 +277,12 @@ public List<IssuedBooks> getIssuedBooksList() {
     }
 
     public void loadDataFromJsonFiles() {
-        adminList = jsonModule.convertJsonToList("src/com/classexample/data/Admin.json", Admin.class);
-        creditantialsList = jsonModule.convertJsonToList("src/com/classexample/data/Credentials.json", Creditantials.class);
-        bookList = jsonModule.convertJsonToList("src/com/classexample/data/Books.json", Book.class);
-        issuedBooksList = jsonModule.convertJsonToList("src/com/classexample/data/IssuedBooks.json", IssuedBooks.class);
-        libraryList = jsonModule.convertJsonToList("src/com/classexample/data/LibraryDetails.json", Library.class);
-        customerList = jsonModule.convertJsonToList("src/com/classexample/data/Customers.json", Customer.class);
+        adminList = jsonModule.convertJsonToList("src/com/librarymanagement/data/Admin.json", Admin.class);
+        creditantialsList = jsonModule.convertJsonToList("src/com/librarymanagement/data/Credentials.json", Creditantials.class);
+        bookList = jsonModule.convertJsonToList("src/com/librarymanagement/data/Books.json", Book.class);
+        issuedBooksList = jsonModule.convertJsonToList("src/com/librarymanagement/data/IssuedBooks.json", IssuedBooks.class);
+        libraryList = jsonModule.convertJsonToList("src/com/librarymanagement/data/LibraryDetails.json", Library.class);
+        customerList = jsonModule.convertJsonToList("src/com/librarymanagement/data/Customers.json", Customer.class);
     }
 /*public void setDefaultCustomerList() {
     customerList.add(new Customer("John Doe", "1234567890", "john@example.com", "New York",0));

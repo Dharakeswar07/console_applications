@@ -34,9 +34,10 @@ public class EmployeeManagementModule {
         InterviewPanelDatabase database = InterviewPanelDatabase.getInstance();
         int lastCredentialsId = database.creditantialsList().stream().mapToInt(Creditantials::getId).max().orElse(0);
         int  creditUserID= lastCredentialsId + 1;
-        Creditantials creditantials=new Creditantials( creditUserID,userName, password,position);
         int lastEmployeeId = database.getEmployeeList().stream().mapToInt(Employee::getId).max().orElse(0);
         int  employeeUserID= lastEmployeeId + 1;
+        Creditantials creditantials=new Creditantials( creditUserID,userName, password,position,employeeUserID);
+
         Employee emp=new Employee(employeeUserID,name, phoneNo, email, location, position);
         if(emp.getPosition()==null)
         {
@@ -46,6 +47,8 @@ public class EmployeeManagementModule {
         {
             InterviewPanelDatabase.getInstance().addEmployeeDetails(emp);
             InterviewPanelDatabase.getInstance().addCreditantials(creditantials);
+            InterviewPanelDatabase.getInstance().creditantialsListExport();
+            InterviewPanelDatabase.getInstance().employeeListExport();
             employeeManagementView.showMessage("Employee Added SuccessFully");
         }
        
@@ -69,6 +72,7 @@ public class EmployeeManagementModule {
        }
        else if(value==1)
        {
+           InterviewPanelDatabase.getInstance().employeeListExport();
         employeeManagementView.showMessage("Library with ID " + empsearchId + " Deleted Succesfully.");
        }
        else if(value==2)

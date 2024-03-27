@@ -24,7 +24,10 @@ Scanner sc=new Scanner(System.in);
         System.out.println("\n\t\t\tInterview Result Update");
         System.out.println("Candidate Id:");
         int candidateId=sc.nextInt();
-        interviewPanelModule.checkInterviewProcess(candidateId);
+        System.out.println("Interview Result:");
+        System.out.println("1. Selected\n 2. Not Selected");
+        int choice=sc.nextInt();
+        interviewPanelModule.checkInterviewProcess(candidateId,choice);
     }
 
     public void addInterview()

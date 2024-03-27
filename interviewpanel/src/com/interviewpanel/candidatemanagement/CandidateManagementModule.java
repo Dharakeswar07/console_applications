@@ -62,6 +62,7 @@ private SessionStore sessionStore;
         int  candidateUserID= lastCandidateId + 1;
         Candidate candidate = new Candidate(candidateUserID,name, location, skill, position, phoneNo, email, education,sessionStore.getUserId());
       InterviewPanelDatabase.getInstance().addCandidateList(candidate);
+      InterviewPanelDatabase.getInstance().candidateListExport();
       candidateManagementView.showMessage("Candidate Added Successfully");
     }
 

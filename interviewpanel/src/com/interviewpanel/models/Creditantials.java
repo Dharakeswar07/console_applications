@@ -7,15 +7,17 @@ public class Creditantials {
     private String userName;
     private String password;
     private String type;
+    private int empId;
 
 
 
     
-    public Creditantials(int  id,String userName, String password, String type) {
+    public Creditantials(int  id,String userName, String password, String type,int empId) {
         this.userName = userName;
         this.password = password;
         this.type = type;
         this.id=id;
+        this.empId=empId;
     }
 
     public static int getUniqueId() {
@@ -27,7 +29,10 @@ public class Creditantials {
         return userName;
     }
 
-    
+    public int getEmpId() {
+        return empId;
+    }
+
     public void setUserName(String userName) {
         this.userName = userName;
     }
@@ -60,11 +65,12 @@ public class Creditantials {
 
     @Override
     public String toString() {
-        return "Creditantials [id=" + id + ", userName=" + userName + ", password=" + password + ", type=" + type + "]";
+        return "Creditantials{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", type='" + type + '\'' +
+                ", empId=" + empId +
+                '}';
     }
-
-    
-
-
-    
 }

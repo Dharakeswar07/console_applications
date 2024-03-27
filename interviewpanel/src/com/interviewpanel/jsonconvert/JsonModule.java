@@ -2,10 +2,7 @@ package com.interviewpanel.jsonconvert;
 
 import com.google.gson.*;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
 import java.util.*;
@@ -34,7 +31,7 @@ public class JsonModule {
             return;
         }
 
-        String fileName = "src/com/classexample/data" + File.separator + dir + ".json";
+        String fileName = "src/com/interviewpanel/data" + File.separator + dir + ".json";
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(list, writer);
         } catch (IOException e) {
@@ -50,6 +47,7 @@ public class JsonModule {
                 T object = gson.fromJson(jsonElement, valueType);
                 list.add(object);
             }
+        } catch (FileNotFoundException e) {
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,7 +64,7 @@ public class JsonModule {
             return;
         }
 
-        String fileName = "src/com/classexample/data" + File.separator + dir + ".json";
+        String fileName = "src/com/interviewpanel/data" + File.separator + dir + ".json";
         try (FileWriter writer = new FileWriter(fileName)) {
             String json = convertQueueToJson(queue);
             writer.write(json);
@@ -76,19 +74,22 @@ public class JsonModule {
         }
     }
 
-    public <T> Queue<T> convertJsonToQueue(String json, Type valueType) {
+    public <T> Queue<T> convertJsonToQueue(String jsonFilePath, Type valueType) {
         Queue<T> queue = new LinkedList<>();
-        try {
-            JsonArray jsonArray = JsonParser.parseString(json).getAsJsonArray();
+        try (FileReader reader = new FileReader(jsonFilePath)) {
+            JsonArray jsonArray = JsonParser.parseReader(reader).getAsJsonArray();
             for (JsonElement jsonElement : jsonArray) {
                 T object = gson.fromJson(jsonElement, valueType);
                 queue.add(object);
             }
+        } catch (FileNotFoundException e) {
+            // Handle file not found exception
         } catch (Exception e) {
             e.printStackTrace();
         }
         return queue;
     }
+
 
 
 

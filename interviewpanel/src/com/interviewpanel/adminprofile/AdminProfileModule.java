@@ -24,10 +24,12 @@ public void addProfileCreditantials(String name,String phoneNo,String  email,Str
     int lastAdminId = database.adminList().stream().mapToInt(Admin::getId).max().orElse(0);
     int  AdminUserID= lastAdminId + 1;
     Admin admin =new Admin(AdminUserID,name, phoneNo, email, address);
-    Creditantials creditantials=new Creditantials(creditUserID,userName, password,role);
+    Creditantials creditantials=new Creditantials(creditUserID,userName, password,role,AdminUserID);
     InterviewPanelDatabase.getInstance().addAdminProfile(admin);
     InterviewPanelDatabase.getInstance().addCreditantials(creditantials);
-    InterviewPanelDatabase.getInstance().removeCreditantials(1);
+    InterviewPanelDatabase.getInstance().removeCreditantials(0);
+    InterviewPanelDatabase.getInstance().adminListExport();
+    InterviewPanelDatabase.getInstance().creditantialsListExport();
 new AdminLoginView().loginInit();
 
 }

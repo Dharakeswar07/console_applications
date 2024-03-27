@@ -8,21 +8,27 @@ public class InterviewPanel {
     private int candidateId;
     private String status;
 
+    private String result;
     static
     {
         uniqueID=1;
     }
 
     
-    public InterviewPanel(int id,int employeeId, int candidateId, String status) {
+    public InterviewPanel(int id,int employeeId, int candidateId, String status,String result) {
         this.employeeId = employeeId;
         this.candidateId = candidateId;
         this.status = status;
         this.id=id;
+        this.result=result;
     }
     
     public int getId() {
         return id;
+    }
+
+    public String getResult() {
+        return result;
     }
 
     public int getEmployeeId() {
@@ -46,10 +52,10 @@ public class InterviewPanel {
 
     @Override
     public String toString() {
-        return String.format("| %-5d | %-10d | %-12d | %-15s |\n", id, employeeId, candidateId, status);
+        return String.format("| %-5s | %-10s | %-12s | %-15s | %-15s |\n", id, employeeId, candidateId, status,result);
     }
 
     public static String getTitle() {
-        return String.format("| %-5s | %-10s | %-12s | %-15s |\n", "ID", "Employee ID", "Candidate ID", "Status");
+        return String.format("| %-5s | %-10s | %-12s | %-15s |%-15s|\n", "ID", "Employee ID", "Candidate ID", "Status","Result");
     }
 }
